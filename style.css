@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(120deg, #fffbe7 0%, #ffe5ec 100%);
+    background: linear-gradient(120deg, #fffefb 0%, #f7faff 100%);
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@ body {
     margin: 0;
     border: none;
     border-radius: 0;
-    box-shadow: 0 0 80px 10px #ffe5ec55 inset;
+    box-shadow: 0 0 80px 10px #f7faff55 inset;
     position: relative;
     overflow-x: hidden;
     color: #222;
@@ -19,8 +19,8 @@ body {
     position: absolute;
     top: -100px; left: -100px; right: -100px; bottom: -100px;
     z-index: 0;
-    background: radial-gradient(circle at 20% 30%, #fffbe7 0%, #ffe5ec00 80%);
-    opacity: 0.5;
+    background: radial-gradient(circle at 20% 30%, #fffbe7 0%, #f7faff00 80%);
+    opacity: 0.4;
     pointer-events: none;
   }
   .game-area {
@@ -28,67 +28,67 @@ body {
     border-radius: 18px;
     padding: 32px 24px;
     margin: 18px 0;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 8px 32px rgba(253,160,133,0.18);
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 8px 32px rgba(200,200,200,0.10);
     position: relative;
     z-index: 1;
   }
   
   #game-info {
-    background: linear-gradient(90deg, #15b465 0%, #a8ff78 100%);
-    color: #fff;
+    background: linear-gradient(90deg, #eaf6fb 0%, #fffbe7 100%);
+    color: #222;
     font-family: "Segoe UI", "Lucida Sans", Geneva, Verdana, sans-serif;
     border-radius: 12px;
     padding: 16px 0;
     margin-bottom: 18px;
-    box-shadow: 0 2px 12px rgba(21,180,101,0.13);
+    box-shadow: 0 2px 12px rgba(200,200,200,0.10);
     font-size: 1.2em;
   }
   
   #controls {
-    background: linear-gradient(90deg, #9b2c2c 0%, #ff5858 100%);
+    background: linear-gradient(90deg, #f7c6e0 0%, #ffe5ec 100%);
     border-radius: 12px;
     padding: 14px 0;
     margin-bottom: 18px;
-    box-shadow: 0 2px 12px rgba(155,44,44,0.13);
+    box-shadow: 0 2px 12px rgba(200,200,200,0.10);
     display: flex;
     justify-content: center;
     gap: 16px;
   }
   
   #controls button, #controls input[type="button"], #controls input[type="submit"] {
-    background: linear-gradient(90deg, #f857a6 0%, #ff5858 100%);
-    color: #fff;
+    background: linear-gradient(90deg, #ffe0f0 0%, #eaf6fb 100%);
+    color: #222;
     border: none;
     border-radius: 8px;
     padding: 10px 22px;
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(248,87,166,0.13);
+    box-shadow: 0 2px 8px rgba(200,200,200,0.10);
     transition: background 0.2s, transform 0.2s;
   }
   
   #controls button:hover, #controls input[type="button"]:hover, #controls input[type="submit"]:hover {
-    background: linear-gradient(90deg, #ff5858 0%, #f857a6 100%);
+    background: linear-gradient(90deg, #fffbe7 0%, #ffe0f0 100%);
     transform: scale(1.08);
   }
   
   #game-container {
-    background: rgba(153, 45, 126, 0.13);
+    background: rgba(220, 220, 220, 0.13);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
     border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(153,45,126,0.13);
+    box-shadow: 0 2px 12px rgba(200,200,200,0.10);
     padding: 18px 0;
   }
   
   .tube {
     width: 54px;
     height: 210px;
-    border: 2.5px solid #222;
+    border: 2.5px solid #bbb;
     border-top: 0px;
     border-radius: 0 0 18px 18px;
     margin: 12px;
@@ -96,27 +96,27 @@ body {
     flex-direction: column-reverse;
     overflow: hidden;
     margin-top: 24px;
-    background: linear-gradient(180deg, #fffbe7 0%, #fda085 100%);
-    box-shadow: 0 4px 16px rgba(253,160,133,0.18);
+    background: linear-gradient(180deg, #fffbe7 0%, #eaf6fb 100%);
+    box-shadow: 0 4px 16px rgba(200,200,200,0.10);
     transition: box-shadow 0.2s, transform 0.2s;
     position: relative;
   }
   
   .tube.selected {
-    border-color: #e75480;
-    box-shadow: 0 0 18px 4px #e7548055, 0 4px 16px rgba(253,160,133,0.18);
+    border-color: #f7c6e0;
+    box-shadow: 0 0 18px 4px #ffe0f055, 0 4px 16px rgba(200,200,200,0.10);
     transform: translateY(-18px) scale(1.05);
   }
   
   .tube:hover {
-    box-shadow: 0 0 24px 8px #fda08555, 0 4px 16px rgba(253,160,133,0.18);
+    box-shadow: 0 0 24px 8px #ffe0f055, 0 4px 16px rgba(200,200,200,0.10);
     transform: scale(1.04);
   }
   
   .water {
     width: 100%;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06) inset;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) inset;
   }
   
   h1, h2, h3 {
@@ -124,7 +124,7 @@ body {
     color: #222;
     text-align: center;
     letter-spacing: 2px;
-    text-shadow: 0 2px 8px rgba(253,160,133,0.13);
+    text-shadow: 0 2px 8px rgba(200,200,200,0.08);
     margin-bottom: 18px;
   }
   
