@@ -6,50 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>關於我的pi事</title>
     <style>
-        body{
-            background-color: 	#FFBFFF;
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc8dd 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .nav-bar a {
+            color: #fff;
+            background: #b34b8c;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 18px;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-bar a:hover {
+            background: #e75480;
+            color: #fffbe7;
+            transform: scale(1.07);
+        }
+
+        .about-card {
+            width: 60%;
+            background-color: #b34b8c;
+            padding: 36px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+            color: #fffbe7;
+            text-align: center;
+        }
+
+        h3,
+        h4 {
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+
         table {
             border: 1px solid rgb(209, 26, 56);
             border-collapse: collapse;
+            margin: 0 auto 20px auto;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         td {
-            margin: 10px;
+            padding: 10px 20px;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+            margin: 0 auto 18px auto;
         }
     </style>
+</head>
 
 <body>
-    <a href="index.html">首頁</a>
-    <a href="about.html">關於我</a>
-    <a href="research.html">學習主題</a>
-    <a href="homework.html">作業</a>
-    <a href="WaterPuzzle.html">WaterPuzzle</a>
-    <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
-    <h3>王治鈞 Wang-Zhi-Jun</h3>
-    <table>
-        <tr>
-            <td width="300px">
-                <ul>
-                    <li>南臺科技大學 資訊工程系學生</li>
-                    <li>學號： 5B1g0007</li>
-                    <li>E-mail： 5b1g0007@stust.edu.tw</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-    <h4>學歷</h4>
-    <ul>
-        <li>永信國小104-109</li>
-        <li>大橋國中109-111</li>
-        <Li>南台科技大學 五專部 資訊工程系</Li>
-    </ul>
-    <h4>打工經驗</h4>
-    <ul>
-        <li>火鍋店</li>
-        <li>丹丹漢堡永康店</li>
-        <Li>7-11</Li>
-    </ul>
+    <div class="nav-bar">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我</a>
+        <a href="research.html">學習主題</a>
+        <a href="homework.html">作業</a>
+        <a href="WaterPuzzle.html">WaterPuzzle</a>
+        <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
+    </div>
+    <div class="about-card">
+        <h3>王治鈞 Wang-Zhi-Jun</h3>
+        <table>
+            <tr>
+                <td width="300px">
+                    <ul>
+                        <li>南臺科技大學 資訊工程系學生</li>
+                        <li>學號： 5B1g0007</li>
+                        <li>E-mail： 5b1g0007@stust.edu.tw</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <h4>學歷</h4>
+        <ul>
+            <li>永信國小104-109</li>
+            <li>大橋國中109-111</li>
+            <li>南台科技大學 五專部 資訊工程系</li>
+        </ul>
+        <h4>打工經驗</h4>
+        <ul>
+            <li>火鍋店</li>
+            <li>丹丹漢堡永康店</li>
+            <li>7-11</li>
+        </ul>
+    </div>
 </body>
 
 </html>
