@@ -1,60 +1,140 @@
 body {
-    background-color: antiquewhite;
-    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg, #fffbe7 0%, #ffe5ec 100%);
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
-    border: 1px dashed blue;
-    border-radius: 20px;
-    margin: 50px;
+    min-height: 100vh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 80px 10px #ffe5ec55 inset;
+    position: relative;
+    overflow-x: hidden;
+    color: #222;
   }
-  
+  body::before {
+    content: "";
+    position: absolute;
+    top: -100px; left: -100px; right: -100px; bottom: -100px;
+    z-index: 0;
+    background: radial-gradient(circle at 20% 30%, #fffbe7 0%, #ffe5ec00 80%);
+    opacity: 0.5;
+    pointer-events: none;
+  }
   .game-area {
-    width: 80%;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 5px;
+    width: 85%;
+    border-radius: 18px;
+    padding: 32px 24px;
+    margin: 18px 0;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 8px 32px rgba(253,160,133,0.18);
+    position: relative;
+    z-index: 1;
   }
   
   #game-info {
-    background-color: rgb(21, 180, 101);
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, #15b465 0%, #a8ff78 100%);
+    color: #fff;
+    font-family: "Segoe UI", "Lucida Sans", Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 12px rgba(21,180,101,0.13);
+    font-size: 1.2em;
   }
   
   #controls {
-    background-color: rgb(155, 44, 44);
+    background: linear-gradient(90deg, #9b2c2c 0%, #ff5858 100%);
+    border-radius: 12px;
+    padding: 14px 0;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 12px rgba(155,44,44,0.13);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  #controls button, #controls input[type="button"], #controls input[type="submit"] {
+    background: linear-gradient(90deg, #f857a6 0%, #ff5858 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(248,87,166,0.13);
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  #controls button:hover, #controls input[type="button"]:hover, #controls input[type="submit"]:hover {
+    background: linear-gradient(90deg, #ff5858 0%, #f857a6 100%);
+    transform: scale(1.08);
   }
   
   #game-container {
-    background-color: rgb(153, 45, 126);
+    background: rgba(153, 45, 126, 0.13);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(153,45,126,0.13);
+    padding: 18px 0;
   }
   
   .tube {
-    width: 50px;
-    height: 200px;
-    border: 2px solid black;
+    width: 54px;
+    height: 210px;
+    border: 2.5px solid #222;
     border-top: 0px;
-    border-radius: 0 0 10px 10px;
-    margin: 10px;
+    border-radius: 0 0 18px 18px;
+    margin: 12px;
     display: flex;
     flex-direction: column-reverse;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 24px;
+    background: linear-gradient(180deg, #fffbe7 0%, #fda085 100%);
+    box-shadow: 0 4px 16px rgba(253,160,133,0.18);
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+  }
+  
+  .tube.selected {
+    border-color: #e75480;
+    box-shadow: 0 0 18px 4px #e7548055, 0 4px 16px rgba(253,160,133,0.18);
+    transform: translateY(-18px) scale(1.05);
+  }
+  
+  .tube:hover {
+    box-shadow: 0 0 24px 8px #fda08555, 0 4px 16px rgba(253,160,133,0.18);
+    transform: scale(1.04);
   }
   
   .water {
     width: 100%;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) inset;
   }
   
-  .tube.selected {
-    border-color: "red";
-    box-shadow: 0 0 10px rgba(187, 177, 177, 0.5);
-    transform: translateY(-20px);
+  h1, h2, h3 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(253,160,133,0.13);
+    margin-bottom: 18px;
   }
+  
+  @media (max-width: 700px) {
+    .game-area {
+        width: 98%;
+        padding: 10px 2px;
+    }
+    .about-card, #myresearch {
+        width: 98% !important;
+        padding: 10px 2px !important;
+    }
+}
