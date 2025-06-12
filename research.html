@@ -6,32 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>研究</title>
     <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe5d9 0%, #fcd5ce 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .nav-bar a {
+            color: #fff;
+            background: #b34b22;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 18px;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-bar a:hover {
+            background: #e76f51;
+            color: #fffbe7;
+            transform: scale(1.07);
+        }
+
         div#myresearch {
-            width: 50%;
+            width: 60%;
             background-color: rgb(179, 75, 34);
-            padding: 30px;
+            padding: 36px 40px;
+            margin: 0 auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+            color: #fffbe7;
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+
+        ol {
+            text-align: left;
+            display: inline-block;
             margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
-    <a href="index.html">首頁</a>
-    <a href="about.html">關於我</a>
-    <a href="research.html">學習主題</a>
-    <a href="homework.html">作業</a>
-    <a href="WaterPuzzle.html">WaterPuzzle</a>
-    <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
+    <div class="nav-bar">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我</a>
+        <a href="research.html">學習主題</a>
+        <a href="homework.html">作業</a>
+        <a href="WaterPuzzle.html">WaterPuzzle</a>
+        <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
+    </div>
     <div id="myresearch">
         <h3>學習主題</h3>
         <ol>
             <li>網站架構</li>
-            <li>
-                AI人工智慧
-            </li>
-            <li>
-                圖訊識別 (Pattern Recognition)
-            </li>
+            <li>AI人工智慧</li>
+            <li>圖訊識別 (Pattern Recognition)</li>
         </ol>
     </div>
 </body>
