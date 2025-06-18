@@ -13,9 +13,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #fff9fb 0%, #ffeef7 100%);
+            background: linear-gradient(135deg, #fff9fb 0%, #eaf6fb 100%);
             font-family: 'Segoe UI', Arial, sans-serif;
             color: #222;
+            position: relative;
         }
 
         .nav-bar {
@@ -23,11 +24,16 @@
             justify-content: center;
             gap: 18px;
             margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            padding: 10px 0;
+            backdrop-filter: blur(6px);
         }
 
         .nav-bar a {
             color: #222;
-            background: #f7c6e0;
+            background: rgba(247, 198, 224, 0.7);
             text-decoration: none;
             padding: 10px 18px;
             border-radius: 18px;
@@ -42,39 +48,85 @@
             transform: scale(1.07);
         }
 
-        .about-card {
-            width: 60%;
-            background-color: #eaf6fb;
-            padding: 36px 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            color: #222;
-            text-align: center;
+        .about-glass {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 700px;
+            max-width: 98vw;
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 36px 24px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            gap: 36px;
         }
 
-        h3,
-        h4 {
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+            border: 5px solid #fff;
+            background: #fff;
+        }
+
+        .about-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-info h3 {
             margin-top: 0;
             letter-spacing: 2px;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
-        table {
+        .about-info h4 {
+            margin-bottom: 6px;
+            margin-top: 18px;
+            letter-spacing: 1.5px;
+        }
+
+        .about-info ul {
+            margin: 0 0 10px 0;
+            padding-left: 18px;
+        }
+
+        .about-info table {
             border: 1px solid #b3b3b3;
             border-collapse: collapse;
-            margin: 0 auto 20px auto;
+            margin-bottom: 18px;
             background: rgba(255, 255, 255, 0.18);
             border-radius: 10px;
             overflow: hidden;
         }
 
-        td {
+        .about-info td {
             padding: 10px 20px;
         }
 
-        ul {
-            text-align: left;
-            display: inline-block;
-            margin: 0 auto 18px auto;
+        @media (max-width: 800px) {
+            .about-glass {
+                flex-direction: column;
+                width: 98vw;
+                padding: 18px 4vw;
+                gap: 18px;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about-info h3 {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
@@ -88,31 +140,39 @@
         <a href="WaterPuzzle.html">WaterPuzzle</a>
         <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
     </div>
-    <div class="about-card">
-        <h3>王治鈞 Wang-Zhi-Jun</h3>
-        <table>
-            <tr>
-                <td width="300px">
-                    <ul>
-                        <li>南臺科技大學 資訊工程系學生</li>
-                        <li>學號： 5B1g0007</li>
-                        <li>E-mail： 5b1g0007@stust.edu.tw</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-        <h4>學歷</h4>
-        <ul>
-            <li>永信國小104-109</li>
-            <li>大橋國中109-111</li>
-            <li>南台科技大學 五專部 資訊工程系</li>
-        </ul>
-        <h4>打工經驗</h4>
-        <ul>
-            <li>火鍋店</li>
-            <li>丹丹漢堡永康店</li>
-            <li>7-11</li>
-        </ul>
+
+    <div class="about-glass">
+        <!-- ✅ 改成正確的圖片路徑 -->
+        <img class="profile-photo" src="img/123.png" alt="大頭貼" width="180" height="180">
+
+        <div class="about-info">
+            <h3>王治鈞 Wang-Zhi-Jun</h3>
+            <table>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>南臺科技大學 資訊工程系學生</li>
+                            <li>學號： 5B1g0007</li>
+                            <li>E-mail： 5b1g0007@stust.edu.tw</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h4>學歷</h4>
+            <ul>
+                <li>永信國小104-109</li>
+                <li>大橋國中109-111</li>
+                <li>南台科技大學 五專部 資訊工程系</li>
+            </ul>
+
+            <h4>打工經驗</h4>
+            <ul>
+                <li>火鍋店</li>
+                <li>丹丹漢堡永康店</li>
+                <li>7-11</li>
+            </ul>
+        </div>
     </div>
 </body>
 
