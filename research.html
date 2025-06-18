@@ -42,26 +42,69 @@
             transform: scale(1.07);
         }
 
-        div#myresearch {
-            width: 60%;
-            background-color: #fffbe7;
-            padding: 36px 40px;
-            margin: 0 auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            color: #222;
+        .topic-area {
+            display: flex;
+            gap: 36px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 22px;
+            box-shadow: 0 6px 24px 0 rgba(179, 75, 34, 0.10);
+            padding: 32px 28px 24px 28px;
+            min-width: 240px;
+            max-width: 320px;
+            flex: 1 1 260px;
+            margin: 0 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.18s, box-shadow 0.18s;
+            border: 2px solid #ffe5d9;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 12px 32px 0 rgba(179, 75, 34, 0.18);
+            border-color: #e76f51;
+        }
+
+        .topic-icon {
+            font-size: 3.2em;
+            margin-bottom: 16px;
+            color: #e76f51;
+            filter: drop-shadow(0 2px 8px #ffe5d9);
+        }
+
+        .topic-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #b34b22;
+            letter-spacing: 1.5px;
+        }
+
+        .topic-desc {
+            color: #444;
+            font-size: 1em;
             text-align: center;
+            margin-bottom: 0;
         }
 
-        h3 {
-            margin-top: 0;
-            letter-spacing: 2px;
-        }
+        @media (max-width: 900px) {
+            .topic-area {
+                flex-direction: column;
+                gap: 18px;
+                align-items: center;
+            }
 
-        ol {
-            text-align: left;
-            display: inline-block;
-            margin: 0 auto;
+            .topic-card {
+                max-width: 98vw;
+            }
         }
     </style>
 </head>
@@ -70,18 +113,29 @@
     <div class="nav-bar">
         <a href="index.html">首頁</a>
         <a href="about.html">關於我</a>
+        <a href="interest.html">興趣</a>
         <a href="research.html">學習主題</a>
         <a href="homework.html">作業</a>
         <a href="WaterPuzzle.html">WaterPuzzle</a>
         <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
     </div>
-    <div id="myresearch">
-        <h3>學習主題</h3>
-        <ol>
-            <li>網站架構</li>
-            <li>AI人工智慧</li>
-            <li>圖訊識別 (Pattern Recognition)</li>
-        </ol>
+    <h3 style="letter-spacing:2px; margin-bottom:10px;">學習主題</h3>
+    <div class="topic-area">
+        <div class="topic-card">
+            <div class="topic-icon">🌐</div>
+            <div class="topic-title">網站架構</div>
+            <div class="topic-desc">學習前端與後端網站開發的基本架構、流程與技術，了解網站如何運作與部署。</div>
+        </div>
+        <div class="topic-card">
+            <div class="topic-icon">🤖</div>
+            <div class="topic-title">AI人工智慧</div>
+            <div class="topic-desc">探索人工智慧的基本原理、應用與發展趨勢，體驗AI在現代生活中的影響。</div>
+        </div>
+        <div class="topic-card">
+            <div class="topic-icon">🖼️</div>
+            <div class="topic-title">圖訊識別 (Pattern Recognition)</div>
+            <div class="topic-desc">認識圖像與訊號的辨識技術，學習如何讓電腦理解與分析各種資料。</div>
+        </div>
     </div>
 </body>
 

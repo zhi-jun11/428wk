@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的興趣</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f3f8ff 0%, #eaf6fb 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #222;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+        .nav-bar a {
+            color: #222;
+            background: #d6e6fa;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 18px;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .nav-bar a:hover {
+            background: #f3f8ff;
+            color: #2d3a8c;
+            transform: scale(1.07);
+        }
+        .interest-card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.08);
+            padding: 36px 32px;
+            max-width: 600px;
+            width: 90vw;
+            text-align: center;
+        }
+        .interest-card h2 {
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+        .interest-list {
+            text-align: left;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        .interest-flex {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 32px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        .interest-item {
+            flex: 1 1 240px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(31,38,135,0.06);
+            padding: 24px 18px;
+            text-align: center;
+            min-width: 220px;
+            max-width: 320px;
+            margin: 0 8px;
+        }
+        .interest-item img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 16px 0 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .interest-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+        .interest-item p {
+            margin: 0;
+            color: #444;
+        }
+        @media (max-width: 800px) {
+            .interest-flex {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .interest-item {
+                max-width: 98vw;
+            }
+        }
+        @media (max-width: 700px) {
+            .interest-card {
+                padding: 16px 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我</a>
+        <a href="research.html">學習主題</a>
+        <a href="homework.html">作業</a>
+        <a href="WaterPuzzle.html">WaterPuzzle</a>
+        <a href="interest.html">興趣</a>
+        <a href="https://zhi-jun11.github.io/react-app/" target="_blank">react作業</a>
+    </div>
+    <div class="interest-card">
+        <h2>我的興趣愛好</h2>
+        <div class="interest-flex">
+            <div class="interest-item">
+                <img src="img/789.jpg" alt="棒球">
+                <h3>看棒球</h3>
+                <p>享受球迷間奮力吶喊的快感</p>
+            </div>
+            <div class="interest-item">
+                <img src="img/520.jpg" alt="啦啦隊">
+                <h3>追星啦啦隊</h3>
+                <p>和他們互動放鬆心情</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
