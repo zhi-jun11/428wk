@@ -67,63 +67,6 @@
             color: #2d3a8c;
             transform: scale(1.07);
         }
-
-        .tictactoe-board {
-            display: grid;
-            grid-template-columns: repeat(3, 60px);
-            grid-template-rows: repeat(3, 60px);
-            gap: 8px;
-            justify-content: center;
-            margin: 24px 0;
-        }
-
-        .tictactoe-cell {
-            width: 60px;
-            height: 60px;
-            background: #fff;
-            border: 2px solid #b3b3b3;
-            border-radius: 12px;
-            font-size: 2.2em;
-            color: #2d3a8c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.15s, box-shadow 0.15s;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            user-select: none;
-        }
-
-        .tictactoe-cell:hover {
-            background: #eaf6fb;
-        }
-
-        .tictactoe-history {
-            margin: 18px auto 0 auto;
-            max-width: 320px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            padding: 16px 18px;
-        }
-
-        .tictactoe-history h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.1em;
-            color: #2d3a8c;
-            letter-spacing: 1px;
-        }
-
-        .tictactoe-history ul {
-            padding-left: 18px;
-            margin: 0;
-        }
-
-        .tictactoe-history li {
-            margin-bottom: 4px;
-            font-size: 1em;
-            color: #444;
-        }
     </style>
     <script>
         function myFunction() {
@@ -143,64 +86,6 @@
 
             document.getElementById("myId").innerHTML = str;
         }
-
-        // 井字遊戲資料
-        let tttBoard = Array(9).fill(null);
-        let tttIsX = true;
-        let tttHistory = [];
-
-        function renderTTTBoard() {
-            const board = document.getElementById('ttt-board');
-            board.innerHTML = '';
-            for (let i = 0; i < 9; i++) {
-                const cell = document.createElement('div');
-                cell.className = 'tictactoe-cell';
-                cell.textContent = tttBoard[i] ? tttBoard[i] : '';
-                cell.onclick = () => handleTTTClick(i);
-                board.appendChild(cell);
-            }
-        }
-
-        function renderTTTHistory() {
-            const list = document.getElementById('ttt-history-list');
-            list.innerHTML = '';
-            tttHistory.forEach((step, idx) => {
-                const li = document.createElement('li');
-                li.textContent = step;
-                list.appendChild(li);
-            });
-        }
-
-        function handleTTTClick(idx) {
-            if (tttBoard[idx] || checkTTTWinner()) return;
-            tttBoard[idx] = tttIsX ? 'X' : 'O';
-            tttHistory.push(`第${tttHistory.length + 1}步：${tttIsX ? 'X' : 'O'} 下在 ${Math.floor(idx / 3) + 1}行${idx % 3 + 1}列`);
-            tttIsX = !tttIsX;
-            renderTTTBoard();
-            renderTTTHistory();
-            const winner = checkTTTWinner();
-            if (winner) {
-                setTimeout(() => alert(`遊戲結束，${winner} 勝利！`), 100);
-            }
-        }
-
-        function checkTTTWinner() {
-            const lines = [
-                [0, 1, 2], [3, 4, 5], [6, 7, 8],
-                [0, 3, 6], [1, 4, 7], [2, 5, 8],
-                [0, 4, 8], [2, 4, 6]
-            ];
-            for (const [a, b, c] of lines) {
-                if (tttBoard[a] && tttBoard[a] === tttBoard[b] && tttBoard[a] === tttBoard[c]) {
-                    return tttBoard[a];
-                }
-            }
-            return null;
-        }
-
-        // 初始化
-        renderTTTBoard();
-        renderTTTHistory();
     </script>
 </head>
 
@@ -219,18 +104,6 @@
     <input type="number" id="numberInput" placeholder="輸入一個數值" />
     <input type="button" value="OK" title="OK" onclick="myFunction()" />
     <div id="myId"></div>
-
-    <div id="tictactoe">
-        <div class="tictactoe-board" id="ttt-board">
-            <!-- 井字遊戲格子由 JS 動態產生 -->
-        </div>
-        <div class="tictactoe-history" id="ttt-history">
-            <h4>遊戲歷程</h4>
-            <ul id="ttt-history-list">
-                <!-- 歷程由 JS 動態產生 -->
-            </ul>
-        </div>
-    </div>
 </body>
 
 </html>
